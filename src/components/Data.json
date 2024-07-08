@@ -1,0 +1,41 @@
+[
+    {
+      "id": 1,
+      "title": "The Walls of Waffles",
+      "subheader": "July 08, 2024",
+      "image": "/static/images/cards/paella.jpg",
+      "content": "This impressive paella is a perfect party dish and a fun meal to cook together with your guests.",
+      "sections": [
+        {
+          "title": "Offer:",
+          "content": "Get a free ice-cream with every waffle."
+        },
+        {
+          "title": "Rules:",
+          "content": "Follow us on Insta, Fb, and Twitter & Share your Instagram story with your 3 friends"
+        },
+        {
+          "title": "Offer:",
+          "content": "Get a free dessert with every order above Rs.350."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Chicken Curry",
+      "subheader": "October 10, 2020",
+      "image": "/static/images/cards/chicken-curry.jpg",
+      "content": "This delicious chicken curry is perfect for a weeknight meal.",
+      "sections": [
+        {
+          "title": "Requirement:",
+          "content": "You need fresh chicken, spices, and vegetables."
+        },
+        {
+          "title": "Method:",
+          "content": "Heat oil in a large pot over medium heat. Add onions, garlic, and ginger, and cook until golden. ..."
+        }
+      ]
+    }
+  ]
+  
