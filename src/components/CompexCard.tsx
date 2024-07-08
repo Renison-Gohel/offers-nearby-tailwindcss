@@ -12,11 +12,16 @@ import Avatar from '@mui/material/Avatar';
 import IconButton, { IconButtonProps } from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
-import { red } from '@mui/material/colors';
+import { grey, orange, red,  } from '@mui/material/colors';
+
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import ShareIcon from '@mui/icons-material/Share';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import MoreVertIcon from '@mui/icons-material/MoreVert';
+import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
+import ArrowForwardIosOutlinedIcon from '@mui/icons-material/ArrowForwardIosOutlined';
+import ShareOutlinedIcon from '@mui/icons-material/ShareOutlined';
+import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
+
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { EffectFade, Navigation, Pagination } from 'swiper/modules';
@@ -56,22 +61,23 @@ export default function RecipeReviewCard() {
         <>
             {data.map((item) => (
                 <Card key={item.id} sx={{ maxWidth: 345, mt: 2, backgroundColor: 'rgb(245,231,231)' }}>
-                    <Link href="about">
-                        <CardHeader
-                            avatar={
-                                <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
-                                    {item.title[0]}
-                                </Avatar>
-                            }
-                            action={
-                                <IconButton aria-label="settings">
-                                    <MoreVertIcon />
-                                </IconButton>
-                            }
-                            title={item.title}
-                            subheader={item.subheader}
-                        />
-                    </Link>
+                    {/* <Link href="about"> */}
+                    <CardHeader
+                        avatar={
+                            <Avatar sx={{ bgcolor: orange[300] }} aria-label={item.title}>
+                                {item.title[0]}
+                            </Avatar>
+                        }
+                        action={
+                            <IconButton aria-label="settings">
+                                <ArrowForwardIosOutlinedIcon />
+                            </IconButton>
+                        }
+                        sx={{}}
+                        title={item.title}
+                        subheader={item.subheader}
+                    />
+                    {/* </Link> */}
                     <Swiper
                         spaceBetween={30}
                         effect={'fade'}
@@ -122,11 +128,19 @@ export default function RecipeReviewCard() {
                     </CardContent>
                     <CardActions disableSpacing>
                         <IconButton aria-label="add to favorites">
-                            <FavoriteIcon />
+                            {/* <FavoriteIcon /> */}
+                            <FavoriteBorderOutlinedIcon className='text-red-500' />
                         </IconButton>
                         <IconButton aria-label="share">
-                            <ShareIcon />
+                            {/* <ShareIcon /> */}
+                            <ShareOutlinedIcon />
                         </IconButton>
+                        <Link href={item.location} target='_blank'>
+                            <IconButton aria-label="location">
+                                {/* LocationIcon */}
+                                <LocationOnOutlinedIcon />
+                            </IconButton>
+                        </Link>
 
                         <Link href="about">
                             <Button sx={{ color: 'rgb(30,41,59)' }}>
@@ -146,9 +160,25 @@ export default function RecipeReviewCard() {
                     <Collapse in={expanded[item.id] || false} timeout="auto" unmountOnExit>
                         <CardContent>
                             {item.sections.map((section, index) => (
+                                // <React.Fragment key={index}>
+                                //     <Typography className='font-semibold'>{section.title}</Typography>
+                                //     <Typography paragraph>{section.content}</Typography>
+                                // </React.Fragment>
                                 <React.Fragment key={index}>
-                                    <Typography className='font-semibold'>{section.title}</Typography>
-                                    <Typography paragraph>{section.content}</Typography>
+                                    {section.title == "Address" ?
+                                        <>
+                                            <Link href={item.location} target='_blank'>
+                                                <Typography className='font-semibold'>{section.title+":"}</Typography>
+                                                <Typography paragraph className='underline underline-offset-4'>{section.content}</Typography>
+                                            </Link>
+                                        </>
+                                        :
+                                        <>
+                                            <Typography className='font-semibold'>{section.title+":"}</Typography>
+                                            <Typography paragraph>{section.content}</Typography>
+                                        </>
+                                    }
+
                                 </React.Fragment>
                             ))}
                         </CardContent>

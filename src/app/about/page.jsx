@@ -1,6 +1,6 @@
 'use client'
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Avatar } from '@mui/joy';
 import Marquee from "react-fast-marquee";
 import AvatarGroup from '@mui/joy/AvatarGroup';
@@ -15,6 +15,8 @@ import { MdLocationOn } from "react-icons/md";
 import { BsCalendarDateFill } from "react-icons/bs";
 import ScrollableParagraph from '@/components/ScrollableText';
 import Link from 'next/link';
+import { createClient } from '@/utils/supabase/client';
+import { InstagramEmbed } from 'react-social-media-embed';
 
 
 
@@ -22,6 +24,13 @@ import Link from 'next/link';
 
 const EventDetail = () => {
   const [index, setIndex] = React.useState(0);
+  const supabase = createClient()
+
+  supabase.auth.getUser().then((res) => {
+    console.log(res)
+  })
+
+
 
 
   return (
@@ -118,6 +127,16 @@ const EventDetail = () => {
                 Details{''}
               </Tab>
               <Tab indicatorInset indicatorPlacement={{ top: 'bottom', bottom: 'top' }["top"]}>
+                Reels{' '}
+                <Chip
+                  size="sm"
+                  variant="soft"
+                  color={index === 2 ? 'primary' : 'neutral'}
+                >
+                  2
+                </Chip>
+              </Tab>
+              <Tab indicatorInset indicatorPlacement={{ top: 'bottom', bottom: 'top' }["top"]}>
                 Reviews{' '}
                 <Chip
                   size="sm"
@@ -161,17 +180,27 @@ const EventDetail = () => {
 
                 </div>
               </TabPanel>
-              <TabPanel value={1}>
+              <TabPanel value={2}>
                 Comming soon! 🔥
               </TabPanel>
-              <TabPanel value={2}>
+              <TabPanel value={3}>
                 Under Construction 🚧
+              </TabPanel>
+              <TabPanel value={1}>
+                <div className='flex flex-col w-full justify-center items-center'>
+                  <InstagramEmbed url="https://www.instagram.com/reel/C4dFfKbPyfs/?utm_source=ig_web_copy_link" width={328} captioned />
+                  <InstagramEmbed url="https://www.instagram.com/reel/C5qatZStpTX/?utm_source=ig_web_copy_link" width={328} />
+                </div>
               </TabPanel>
             </Box>
           </Tabs>
         </Box>
       </div>
-
+      <div className='flex flex-col w-full justify-center items-center pt-2 mt-4 text-slate-100'>
+        {/* <p className='mb-1'>Social Feeds</p> */}
+        <InstagramEmbed url="https://www.instagram.com/reel/C4dFfKbPyfs/?utm_source=ig_web_copy_link" width={328} captioned />
+        <InstagramEmbed url="https://www.instagram.com/reel/C5qatZStpTX/?utm_source=ig_web_copy_link" width={328} />
+      </div>
     </div>
   );
 };

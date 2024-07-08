@@ -4,36 +4,42 @@
       "title": "The Walls of Waffles",
       "subheader": "July 08, 2024",
       "image": "/static/images/cards/paella.jpg",
-      "content": "This impressive paella is a perfect party dish and a fun meal to cook together with your guests.",
+      "content": "Get a free ice-cream with every waffle.",
+      "location":"https://www.google.com/maps/dir//The+Walls+of+Waffles,+Raj+Palace,+Sadhu+Vasvani+Rd,+Hari+Nagar,+Rajkot,+Gujarat+360005/@22.2942561,61.0029944,6z/data=!4m8!4m7!1m0!1m5!1m1!1s0x3959cb61b9a1c21d:0x4257a9cac50f6844!2m2!1d70.7588538!2d22.2942561?entry=ttu",
       "sections": [
         {
-          "title": "Offer:",
-          "content": "Get a free ice-cream with every waffle."
-        },
-        {
-          "title": "Rules:",
+          "title": "Rules",
           "content": "Follow us on Insta, Fb, and Twitter & Share your Instagram story with your 3 friends"
         },
         {
-          "title": "Offer:",
+          "title": "Offer",
           "content": "Get a free dessert with every order above Rs.350."
+        },
+        {
+          "title": "Address",
+          "content": "Sadhu Vasvani Road, RK Chamber, Rajkot, 360004."
         }
       ]
     },
     {
       "id": 2,
-      "title": "Chicken Curry",
+      "title": "Raju Omlet",
       "subheader": "October 10, 2020",
       "image": "/static/images/cards/chicken-curry.jpg",
-      "content": "This delicious chicken curry is perfect for a weeknight meal.",
+      "content": "Free shurmaa with every order.",
+      "location": "https://www.google.com/maps/dir/22.2860074,70.7748186/raju+omlet+rajkot+munjka/@22.2793013,70.7415569,14z/data=!3m1!4b1!4m9!4m8!1m1!4e1!1m5!1m1!1s0x3959cb9fa97ae83f:0x94512c43fdb5c5b1!2m2!1d70.7512278!2d22.2715662?entry=ttu",
       "sections": [
         {
-          "title": "Requirement:",
-          "content": "You need fresh chicken, spices, and vegetables."
+          "title": "Rules",
+          "content": "Follow us on Insta, Fb, and Twitter & Share your Instagram story with your 3 friends"
         },
         {
-          "title": "Method:",
-          "content": "Heat oil in a large pot over medium heat. Add onions, garlic, and ginger, and cook until golden. ..."
+          "title": "Offer",
+          "content": "Get a free Shurmaa with every order."
+        },
+        {
+          "title": "Address",
+          "content": "University Road, Near Matuki, Munjka, Rajkot, 360002"
         }
       ]
     }
