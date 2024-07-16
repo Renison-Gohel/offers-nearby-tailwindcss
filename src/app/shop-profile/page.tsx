@@ -17,8 +17,6 @@ import TodayRoundedIcon from '@mui/icons-material/TodayRounded';
 import KeyboardArrowRightRoundedIcon from '@mui/icons-material/KeyboardArrowRightRounded';
 import Link from 'next/link'
 
-type Props = {}
-
 interface TabPanelProps {
     children?: React.ReactNode;
     index: number;
@@ -106,7 +104,7 @@ const StyledTabs = styled((props: StyledTabsProps) => (
         scrollButtons
         allowScrollButtonsMobile
         className='text-white'
-        centered
+        // centered
     />
 ))({
     '& .MuiTabs-indicator': {
@@ -141,7 +139,7 @@ const StyledTab = styled((props: StyledTabProps) => (
     },
 }));
 
-export default function ShopProfile(props: TabPanelProps) {
+function ShopProfile(props: TabPanelProps) {
 
     const [value, setValue] = React.useState(0);
 
@@ -261,3 +259,5 @@ export default function ShopProfile(props: TabPanelProps) {
         </div>
     )
 }
+
+export default ShopProfile
