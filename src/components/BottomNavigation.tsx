@@ -19,7 +19,7 @@ export default function FixedBottomNavigation() {
   }, [value]);
 
   return (
-    <Box sx={{ pb: 6, }} ref={ref} className="bg-slate-800">
+    <Box sx={{ pb: 6, }} ref={ref} className="bg-[rgb(14,20,27)]">
       <CssBaseline />
       <List>
       </List>

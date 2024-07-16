@@ -2,8 +2,16 @@
 
 import React from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
+
 import CoverImage from '@/../public/dominos-cover.jpg'
 import ProfileImage from '@/../public/dominos-logo.png'
+
+import EventAvailableIcon from '@mui/icons-material/EventAvailable';
+import EventBusyOutlinedIcon from '@mui/icons-material/EventBusyOutlined';
+import TodayRoundedIcon from '@mui/icons-material/TodayRounded';
+import KeyboardArrowRightRoundedIcon from '@mui/icons-material/KeyboardArrowRightRounded';
+
 
 import { styled } from '@mui/material/styles';
 import Tabs from '@mui/material/Tabs';
@@ -12,11 +20,10 @@ import Box from '@mui/material/Box';
 import Button from '@mui/joy/Button'
 import Chip from '@mui/material/Chip';
 
-import EventAvailableIcon from '@mui/icons-material/EventAvailable';
-import TodayRoundedIcon from '@mui/icons-material/TodayRounded';
-import KeyboardArrowRightRoundedIcon from '@mui/icons-material/KeyboardArrowRightRounded';
-import Link from 'next/link'
-
+import Zoom from 'react-medium-image-zoom'
+import 'react-medium-image-zoom/dist/styles.css'
+import ReviewsCard from '@/components/ReviewsCard'
+import AiReview from '@/components/AiReview'
 
 function TabPanel(props) {
     const { children, TPvalue, index, ...other } = props;
@@ -92,7 +99,7 @@ const StyledTabs = styled((props) => (
         scrollButtons
         allowScrollButtonsMobile
         className='text-white'
-        // centered
+    // centered
     />
 ))({
     '& .MuiTabs-indicator': {
@@ -202,7 +209,7 @@ export default function ShopProfile(props) {
                                     <p className='font-light'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae, quod?</p>
                                     <div className='flex flex-row mt-2 w-full justify-between items-center'>
                                         <div className='flex flex-row gap-2'>
-                                            <Chip className='p-1' variant="outlined" label="Expired" color="warning" size="small" icon={<EventAvailableIcon />} />
+                                            <Chip className='p-1' variant="outlined" label="Expired" color="warning" size="small" icon={<EventBusyOutlinedIcon />} />
                                             <Chip className='p-1' variant="outlined" label="25 July to 29 July" color="warning" size="small" icon={<TodayRoundedIcon />} />
                                         </div>
                                         <Button variant="outlined" size="sm" className=''>
@@ -211,13 +218,13 @@ export default function ShopProfile(props) {
                                     </div>
                                 </Link>
                             </div>
-                            <div className='flex flex-col justify-start items-start w-full rounded-lg bg-slate-300 opacity-75 p-2 border-2 border-indigo-600'>
+                            <div className='flex flex-col justify-start items-start w-full rounded-lg bg-slate-200 opacity-75 p-2 border-2 border-indigo-600'>
                                 <Link href={'about'}>
                                     <p className='font-semibold'>Buy any pizza get Cheeze pizza free</p>
                                     <p className='font-light'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae, quod?</p>
                                     <div className='flex flex-row mt-2 w-full justify-between items-center'>
                                         <div className='flex flex-row gap-2'>
-                                            <Chip className='p-1' variant="outlined" label="Expired" color="warning" size="small" icon={<EventAvailableIcon />} />
+                                            <Chip className='p-1' variant="outlined" label="Expired" color="warning" size="small" icon={<EventBusyOutlinedIcon />} />
                                             <Chip className='p-1' variant="outlined" label="25 July to 29 July" color="warning" size="small" icon={<TodayRoundedIcon />} />
                                         </div>
                                         <Button variant="outlined" size="sm" className=''>
@@ -229,13 +236,46 @@ export default function ShopProfile(props) {
                         </div>
                     </TabPanel>
                     <TabPanel TPvalue={value} index={1}>
-                        <div>
-                            <p className='text-center font-semibold'>Item Two</p>
+                        <div className='flex flex-col justify-center items-center gap-3'>
+                            <Zoom>
+                                <Image width={500} height={500} alt="pizza" src="https://content.jdmagicbox.com/comp/patna/l6/0612px612.x612.230529204146.t1l6/catalogue/domino-s-pizza-kumhrar-patna-pizza-outlets-cz6kz2t69u.jpg" />
+                            </Zoom>
+                            <Zoom>
+                                <Image width={500} height={500} alt="pizza" src="https://content.jdmagicbox.com/v2/comp/delhi/d3/011pxx11.xx11.231108081533.x6d3/catalogue/domino-s-pizza-noida-sector-12-delhi-pizza-outlets-r25vuklg9a.jpg" />
+                            </Zoom>
+                            <Zoom>
+                                <Image width={500} height={500} alt="pizza" src="https://online.fliphtml5.com/kekiw/mwfd/files/large/2.webp" />
+                            </Zoom>
+                            <Zoom>
+                                <Image width={500} height={500} alt="pizza" src="https://img.yumpu.com/20122530/1/500x640/dominosr-menu.jpg" />
+                            </Zoom>
                         </div>
                     </TabPanel>
                     <TabPanel TPvalue={value} index={2}>
-                        <div>
-                            <p className=''>Item Three</p>
+                        <div className='flex flex-col justify-center items-center gap-2'>
+                            <ReviewsCard
+                                userName='Satyam Thoria'
+                                comment='We are a community of developers prepping for coding interviews, participate, chat with others and get better at interviewing.'
+                                likeCount={20}
+                                dislikeCount={3}
+                            />
+                            <ReviewsCard
+                                userName='Abhishek Tadhani'
+                                comment='We are a community of developers prepping for coding interviews, participate, chat with others and get better at interviewing.'
+                                likeCount={30}
+                                dislikeCount={5}
+                            />
+                            <ReviewsCard
+                                userName='Rashi'
+                                comment='We are a community of developers prepping for coding interviews, participate, chat with others and get better at interviewing.'
+                                likeCount={15}
+                                dislikeCount={8}
+                            />
+                        </div>
+                    </TabPanel>
+                    <TabPanel TPvalue={value} index={3}>
+                        <div className='flex flex-col justify-center items-center'>
+                            <AiReview />
                         </div>
                     </TabPanel>
                 </Box>

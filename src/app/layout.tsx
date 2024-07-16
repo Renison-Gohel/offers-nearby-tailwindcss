@@ -4,6 +4,7 @@ import './globals.css';
 import FixedBottomNavigation from '@/components/BottomNavigation';
 import ResponsiveAppBar from '@/components/AppBar';
 import SearchBar from '@/components/SearchBar';
+import NextTopLoader from 'nextjs-toploader';
 
 const font = IBM_Plex_Sans({
   weight: ['400', '500', '700'],
@@ -19,11 +20,12 @@ export const metadata = {
 export default function RootLayout(props: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className={font.className}>
-        <ResponsiveAppBar/>
-        <SearchBar/>
+      <body className={`${font.className} bg-[rgb(14,20,27)]`}>
+        <NextTopLoader color='purple'/>
+        <ResponsiveAppBar />
+        <SearchBar />
         {props.children}
-        <FixedBottomNavigation/>
+        <FixedBottomNavigation />
       </body>
     </html>
   );

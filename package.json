@@ -10,6 +10,7 @@
     "post-update": "echo \"codesandbox preview only, need an update\" && pnpm update --latest"
   },
   "dependencies": {
+    "@dotlottie/react-player": "^1.6.19",
     "@emotion/react": "^11.11.4",
     "@emotion/styled": "^11.11.5",
     "@mui/base": "next",
@@ -20,11 +21,14 @@
     "@supabase/supabase-js": "^2.44.3",
     "clsx": "latest",
     "next": "latest",
+    "nextjs-toploader": "^1.6.12",
     "react": "latest",
     "react-dom": "latest",
     "react-fast-marquee": "^1.6.5",
     "react-icons": "^5.2.1",
+    "react-medium-image-zoom": "^5.2.8",
     "react-social-media-embed": "^2.5.13",
+    "react-type-animation": "^3.2.0",
     "swiper": "^11.1.4"
   },
   "devDependencies": {

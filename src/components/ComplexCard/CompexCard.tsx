@@ -62,12 +62,13 @@ export default function RecipeReviewCard() {
         <>
             {data.map((item) => (
                 <Card key={item.id} sx={{ maxWidth: 345, mt: 2, backgroundColor: 'rgb(245,231,231)' }}>
-                    {/* <Link href="about"> */}
                     <CardHeader
                         avatar={
-                            <Avatar sx={{ bgcolor: 'orange' }} aria-label={item.title}>
-                                {item.title[0]}
-                            </Avatar>
+                            <Link href="shop-profile">
+                                <Avatar sx={{ bgcolor: 'orange' }} aria-label={item.title}>
+                                    {item.title[0]}
+                                </Avatar>
+                            </Link>
                         }
                         action={
                             <Link href="about">
@@ -77,10 +78,17 @@ export default function RecipeReviewCard() {
                             </Link>
                         }
                         sx={{}}
-                        title={item.title}
-                        subheader={item.subheader}
+                        title={
+                            <Link href="shop-profile">
+                                {item.title}
+                            </Link>
+                        }
+                        subheader={
+                            <Link href="shop-profile">
+                                {item.subheader}
+                            </Link>
+                        }
                     />
-                    {/* </Link> */}
                     <Swiper
                         spaceBetween={30}
                         effect={'fade'}
