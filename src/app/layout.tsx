@@ -3,6 +3,7 @@ import { IBM_Plex_Sans } from 'next/font/google';
 import './globals.css';
 import FixedBottomNavigation from '@/components/BottomNavigation';
 import ResponsiveAppBar from '@/components/AppBar';
+import SearchBar from '@/components/SearchBar';
 
 const font = IBM_Plex_Sans({
   weight: ['400', '500', '700'],
@@ -20,6 +21,7 @@ export default function RootLayout(props: { children: React.ReactNode }) {
     <html lang="en">
       <body className={font.className}>
         <ResponsiveAppBar/>
+        <SearchBar/>
         {props.children}
         <FixedBottomNavigation/>
       </body>

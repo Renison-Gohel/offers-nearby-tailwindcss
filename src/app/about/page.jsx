@@ -34,8 +34,8 @@ const EventDetail = () => {
 
 
   return (
-    <div className='flex flex-col justify-center items-center bg-[rgb(14,20,27)] h-max'>
-      <img src="https://media.gettyimages.com/id/1343097420/photo/business-meeting-in-a-bright-office.jpg?s=612x612&w=0&k=20&c=XSfbrN_M2mPmH0nR8ucbtOECXP2LLPHdK29KV6YfyjM=" className='' alt="logo" />
+    <div className='flex flex-col justify-center items-center bg-[rgb(14,20,27)] h-max pt-4'>
+      <img src="https://www.designeatrepeat.com/wp-content/uploads/2023/05/best-crispy-belgian-waffles-syrup-500x375.jpg" className='' alt="logo" />
       <h1 className='text-white justify-start w-full pt-6 pl-3 pb-2 font-semibold text-lg underline underline-offset-4'>Buy 1 waffle get 1 ice cream free 🧇</h1>
       <div className='flex flex-row w-full pt-2 pl-2 justify-start items-center text-center space-x-2'>
         <Avatar className='justify-start pt-2 pl-2' size='sm' src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cHJvZmlsZXxlbnwwfHwwfHx8MA%3D%3D" />

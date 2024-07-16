@@ -12,7 +12,7 @@ import Avatar from '@mui/material/Avatar';
 import IconButton, { IconButtonProps } from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
-import { grey, orange, red,  } from '@mui/material/colors';
+import { grey, orange, red, } from '@mui/material/colors';
 
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import ShareIcon from '@mui/icons-material/Share';
@@ -31,8 +31,9 @@ import 'swiper/css';
 import 'swiper/css/effect-fade';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
+import './custom-swipper-class.css';
 
-import data from './Data.json'; // Adjust the import path as necessary
+import data from '../Data.json'; // Adjust the import path as necessary
 import Link from 'next/link';
 
 interface ExpandMoreProps extends IconButtonProps {
@@ -64,14 +65,16 @@ export default function RecipeReviewCard() {
                     {/* <Link href="about"> */}
                     <CardHeader
                         avatar={
-                            <Avatar sx={{ bgcolor: orange[300] }} aria-label={item.title}>
+                            <Avatar sx={{ bgcolor: 'orange' }} aria-label={item.title}>
                                 {item.title[0]}
                             </Avatar>
                         }
                         action={
-                            <IconButton aria-label="settings">
-                                <ArrowForwardIosOutlinedIcon />
-                            </IconButton>
+                            <Link href="about">
+                                <IconButton aria-label="settings">
+                                    <ArrowForwardIosOutlinedIcon />
+                                </IconButton>
+                            </Link>
                         }
                         sx={{}}
                         title={item.title}
@@ -86,7 +89,6 @@ export default function RecipeReviewCard() {
                             clickable: true,
                         }}
                         modules={[EffectFade, Navigation, Pagination]}
-                        className="mySwiper"
                     >
                         <SwiperSlide>
                             <CardMedia
@@ -168,13 +170,13 @@ export default function RecipeReviewCard() {
                                     {section.title == "Address" ?
                                         <>
                                             <Link href={item.location} target='_blank'>
-                                                <Typography className='font-semibold'>{section.title+":"}</Typography>
+                                                <Typography className='font-semibold'>{section.title + ":"}</Typography>
                                                 <Typography paragraph className='underline underline-offset-4'>{section.content}</Typography>
                                             </Link>
                                         </>
                                         :
                                         <>
-                                            <Typography className='font-semibold'>{section.title+":"}</Typography>
+                                            <Typography className='font-semibold'>{section.title + ":"}</Typography>
                                             <Typography paragraph>{section.content}</Typography>
                                         </>
                                     }
